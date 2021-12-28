@@ -70,6 +70,11 @@ class Motor:
  
     def setMotorModel(self,duty1,duty2,duty3,duty4):
         duty1,duty2,duty3,duty4=self.duty_range(duty1,duty2,duty3,duty4)
+        #PS invert motor duty to correct movement
+        duty1=-duty1
+        duty2=-duty2
+        duty3=-duty3
+        duty4=-duty4
         self.left_Upper_Wheel(duty1)
         self.left_Lower_Wheel(duty2)
         self.right_Upper_Wheel(duty3)
